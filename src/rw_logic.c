@@ -202,7 +202,6 @@ bool rw_createOutLog(const char* outlog_file, Car* output_head, int sim_steps)
     cJSON_Delete(json_obj);
     free(json_buf);
 
-    fclose(f);
     return true;
 }
 
