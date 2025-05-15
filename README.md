@@ -33,10 +33,10 @@ Example input file can be found in example_json_files directory.
 - When a car leaves the intersection, its Car structure stores the step number in int outSimStep
     - (-1) in program means the vehicle did not leave the intersection
 - Traffic light states are stored in the Road structure using the enum TrafficLightState:
-    - LIGHT_RED – red, vehicles stop
-    - LIGHT_YELLOW_TO_RED – yellow (to red), vehicles stop
-    - LIGHT_YELLOW_TO_GREEN – yellow (to green), vehicles stop
-    - LIGHT_GREEN – green, vehicles move
+    - `LIGHT_RED` – red, vehicles stop
+    - `LIGHT_YELLOW_TO_RED` – yellow (to red), vehicles stop
+    - `LIGHT_YELLOW_TO_GREEN` – yellow (to green), vehicles stop
+    - `LIGHT_GREEN` – green, vehicles move
 
 
 
@@ -58,10 +58,10 @@ Example input file can be found in example_json_files directory.
 2. Priority calculation
     - If the road is empty: priority = 0
     - If the road is not empty and light is red:
-        - priority = (car_count * PRIORITY_CAR_COUNT) + (light_step_counter * PRIORITY_LIGHT_STEP_COUNTER)
+        - `priority` = (`car_count` * `PRIORITY_CAR_COUNT`) + (`light_step_counter` * `PRIORITY_LIGHT_STEP_COUNTER`)
 
     - If the road is not empty and light is green:
-        - priority = (car_count * PRIORITY_CAR_COUNT)
+        - `priority` = (`car_count` * `PRIORITY_CAR_COUNT`)
 
 
     - Definitions:
@@ -76,6 +76,6 @@ Example input file can be found in example_json_files directory.
 
 5. When the red light is set, the process of changing the lights on the previously selected road to green begins, also passing through the yellow lights for one simulation step.
 
-6. Green light lasts at least TRAFFIC_MIN_GREEN_STEPS, default: 4 steps
+6. Green light lasts at least `TRAFFIC_MIN_GREEN_STEPS`, default: 4 steps
 
 7. Then, after the green light time has elapsed, the algorithm repeats. If the same raod is chosen again, the lights remain green (steps 4. and 5. are not performed)
