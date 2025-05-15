@@ -15,7 +15,7 @@ gcc -o build/main.exe src/main.c src/rw_logic.c src/traffic.c libs/cJSON/cJSON.c
 
 
 ## Running the simulation
-The program require **two aruments**:
+The program requires **two aruments**:
 1. Path to the input `*.json` file with commands
 2. Path to the output `*.json` file
 
@@ -28,7 +28,7 @@ Example input file can be found in `example_json_files` directory.
 - In one step, only one car can pass the intersection if:
     - has a green light
     - is first in queue
-- Vehicles must have unique identifiers for differentiate in output file
+- Vehicles must have unique identifiers to differentiate them in output file
 - Vehicle identifiers are created according to the following formula: `vehicleX`, where X >= 0
 - When a car leaves the intersection, its `Car` structure stores the step number in int `outSimStep`
     - (-1) in program means the vehicle did not leave the intersection
@@ -66,7 +66,7 @@ Example input file can be found in `example_json_files` directory.
 
     - Definitions:
         - `car_count` - number of vehicles on the road
-        - `light_step_counter` - how long the red light has lasted since a vehicle appeared, (in simulation steps), (the variable is not incremented when the road is empty)
+        - `light_step_counter` - number of steps the red light has been active since a vehicle appeared, (in simulation steps), (the variable is not incremented when the road is empty)
         - `PRIORITY_CAR_COUNT` - weight of car_count factor, default: 2
         - `PRIORITY_LIGHT_STEP_COUNTER` - weight of light_step_counter factor, default: 1
 
@@ -78,4 +78,4 @@ Example input file can be found in `example_json_files` directory.
 
 6. Green light lasts at least `TRAFFIC_MIN_GREEN_STEPS`, default: 4 steps
 
-7. Then, after the green light time has elapsed, the algorithm repeats. If the same raod is chosen again, the lights remain green (steps 4. and 5. are not performed)
+7. Then, after the green light time has elapsed, the algorithm repeats. If the same raod is chosen again, the light remains green and steps 4 and 5 are skipped
