@@ -19,7 +19,7 @@ The program require **two aruments**:
 1. Path to the input `*.json` file with commands
 2. Path to the output `*.json` file
 
-Example input file can be found in example_json_files directory.
+Example input file can be found in `example_json_files` directory.
 
 
 
@@ -30,9 +30,9 @@ Example input file can be found in example_json_files directory.
     - is first in queue
 - Vehicles must have unique identifiers for differentiate in output file
 - Vehicle identifiers are created according to the following formula: `vehicleX`, where X >= 0
-- When a car leaves the intersection, its Car structure stores the step number in int outSimStep
+- When a car leaves the intersection, its `Car` structure stores the step number in int `outSimStep`
     - (-1) in program means the vehicle did not leave the intersection
-- Traffic light states are stored in the Road structure using the enum TrafficLightState:
+- Traffic light states are stored in the `Road` structure using the `enum TrafficLightState`:
     - `LIGHT_RED` – red, vehicles stop
     - `LIGHT_YELLOW_TO_RED` – yellow (to red), vehicles stop
     - `LIGHT_YELLOW_TO_GREEN` – yellow (to green), vehicles stop
