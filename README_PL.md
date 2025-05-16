@@ -87,3 +87,12 @@ Przykładowy plik wejściowy znajduje się w katalogu: `example_json_files`
 6. Zielone światło traw minimum tyle kroków, ile ustawiono w definicji `TRAFFIC_MIN_GREEN_STEPS`, domyślnie 4
 
 7. Następnie po upływie czasu zielonego światła algorytm się powtarza. Jeśli ponownie wybrana zostaje ta sama droga, to światła zostają zielone (nie wykonują się kroki 4. i 5.)
+
+
+
+## Założenia ułatwiające przeniesienie na platforme embedded
+
+- Funkcje odpowiedzialne za odczyt i zapis danych w formacie JSON (rw_logic.c) są odseparowane od logiki zarządzania stanami świateł na skrzyżowaniu i mogą być łatwo zastąpione metodami komunikacyjnymi dostosowanymi do platform embedded, takimi jak transmisja przez UART. W przypadku pozostania przy obsłudze plików JSON projekt można uruchomić na bardziej rozbudowanej platformie embedded np. Raspberry Pi.
+- Z powodu częstego ograniczenia lub wysokich kosztów obliczeniowych obsługi zmiennych zmiennoprzecinkowych nie wykorzystano ich w projekcie.
+- Wszystkie stany świateł oraz dane sterujące są przechowywane w przejrzystych, logicznie uporządkowanych strukturach danych, co pozwala na prostą integrację ze sterowaniem fizycznymi światłami za pomocą mikrokontrolera.
+- Kod nie zależy od bibliotek specyficznych dla systemów desktopowych, co zwiększa jego przenośność i ułatwia kompilację na różnych platformach.

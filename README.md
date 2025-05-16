@@ -81,3 +81,12 @@ Example input file can be found in `example_json_files` directory.
 6. Green light lasts at least `TRAFFIC_MIN_GREEN_STEPS`, default: 4 steps
 
 7. Then, after the green light time has elapsed, the algorithm repeats. If the same raod is chosen again, the light remains green and steps 4 and 5 are skipped
+
+
+
+## Possibility of transferring to embedded platforms
+
+- Functions responsible for reading and writing data in JSON format (rw_logic.c) are separated from the logic managing the traffic light states at the intersection and can be easily replaced with communication methods tailored for embedded platforms, as UART transmission. If JSON file handling is retained, the project can be run on more advanced embedded platforms like Raspberry Pi.
+- Due to frequent limitations or high computational cost of floating-point operations, no floating-point variables are used in the project.
+- All traffic light states and control data are stored in clear, logically organized data structures, enabling straightforward integration with physical traffic light control via a microcontroller.
+- The code does not depend on libraries specific to desktop systems
