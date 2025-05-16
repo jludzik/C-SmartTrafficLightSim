@@ -5,13 +5,14 @@
 - Kompilator: x86_64-w64-mingw32
 - Wersja: 14.1.0
 
-W projekcie wykorzystano bibliotekę [cJSON](https://github.com/DaveGamble/cJSON)
+- W projekcie wykorzystano bibliotekę [cJSON](https://github.com/DaveGamble/cJSON)
 
-Kompilacje można wykonać z poziomu terminala:
+- Kompilacje można wykonać z poziomu terminala:
+`gcc -o build/main.exe src/main.c src/rw_logic.c src/traffic.c libs/cJSON/cJSON.c -Iinclude -Wall -std=c17`
 
-gcc -o build/main.exe src/main.c src/rw_logic.c src/traffic.c libs/cJSON/cJSON.c -Iinclude -Wall -std=c18
-
-Lub za pomocą pliku makefile
+- Lub za pomocą CMake:
+`cmake .`
+`ninja`
 
 
 

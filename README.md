@@ -8,9 +8,11 @@
 - The project uses the cJSON [library](https://github.com/DaveGamble/cJSON)
 
 - Compile from terminal:
-gcc -o build/main.exe src/main.c src/rw_logic.c src/traffic.c libs/cJSON/cJSON.c -Iinclude -Wall -std=c18
+gcc -o `build/main.exe src/main.c src/rw_logic.c src/traffic.c libs/cJSON/cJSON.c -Iinclude -Wall -std=c17`
 
-- Or use a Makefile
+- Or use a CMake:
+`cmake .`
+`ninja`
 
 
 
