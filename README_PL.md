@@ -8,7 +8,7 @@
 - W projekcie wykorzystano bibliotekę [cJSON](https://github.com/DaveGamble/cJSON)
 
 - Kompilacje można wykonać z poziomu terminala:
-`gcc -o build/main.exe src/main.c src/rw_logic.c src/traffic.c libs/cJSON/cJSON.c -Iinclude -Wall -std=c17`
+`gcc -o main src/main.c src/rw_logic.c src/traffic.c libs/cJSON/cJSON.c -Iinclude -Wall -std=c17`
 
 - Lub za pomocą CMake:
 `cmake .`
